@@ -1,18 +1,33 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+const db = require('./config/mongoose');
+const Event = require('./models/event');
+const Registration = require('./models/registration');
+
+
+app.set('view engine', 'ejs');
+app.use(express.urlencoded());
+
+
 
 app.get('/',function(req, res){
-    return res.end('<a href="https://github.com/ayushkarn739">ElDraco</a>');
-})
+    return res.render('home',{
+        page_title: "Event Manager"
+    }
+    )
+});
 
-
-
-
-
-
-
-
+app.post("/create-event",function(req,res){
+    Event.create({
+        title: req.body.title,
+        description: req.body.description,
+        date: req.body.date
+    },
+    function(err, event){
+        console.log(event);
+    })
+});
 
 
 
