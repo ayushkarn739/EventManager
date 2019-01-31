@@ -1,0 +1,14 @@
+{
+  "name": "pikapika",
+  "version": "1.0.0",
+  "description": "event manager pika pika",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ElDraco",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
